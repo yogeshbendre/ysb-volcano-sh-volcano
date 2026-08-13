@@ -42,6 +42,7 @@ type QueueSpecApplyConfiguration struct {
 	// Parent define the parent of queue
 	Parent *string `json:"parent,omitempty"`
 	// The amount of resources configured by the user. This part of resource can be shared with other queues and reclaimed back.
+	// Only honored by the capacity plugin; the default proportion plugin computes deserved share from queue Weight instead.
 	Deserved *v1.ResourceList `json:"deserved,omitempty"`
 	// Priority define the priority of queue. Higher values are prioritized for scheduling and considered later during reclamation.
 	Priority *int32 `json:"priority,omitempty"`

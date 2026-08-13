@@ -492,6 +492,7 @@ type QueueSpec struct {
 	Parent string `json:"parent,omitempty" protobuf:"bytes,8,opt,name=parent"`
 
 	// The amount of resources configured by the user. This part of resource can be shared with other queues and reclaimed back.
+	// Only honored by the capacity plugin; the default proportion plugin computes deserved share from queue Weight instead.
 	// +optional
 	Deserved v1.ResourceList `json:"deserved,omitempty" protobuf:"bytes,9,opt,name=deserved"`
 
